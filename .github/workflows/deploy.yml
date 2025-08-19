@@ -60,6 +60,9 @@ jobs:
           script: |
             set -euo pipefail
             cd /opt/apps
-            docker compose pull personal-website
-            docker compose up -d personal-website
+            # Pull the latest image
+            docker compose pull
+            # Restart all services
+            docker compose up -d
+            # Clean up old images
             docker image prune -f
