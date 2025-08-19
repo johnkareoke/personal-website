@@ -6,7 +6,7 @@ archive.johncarolin.com {
     }
 
     # Reverse proxy to the Flask app
-    reverse_proxy localhost:5001 {
+    reverse_proxy localhost:8000 {
         # Health check
         health_uri /api/posts
         health_interval 30s

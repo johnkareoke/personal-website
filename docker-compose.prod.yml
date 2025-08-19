@@ -2,7 +2,7 @@ services:
   personal-website:
     image: ghcr.io/john-dainsured/personal-website:latest
     ports:
-      - "127.0.0.1:5001:5001"
+      - "127.0.0.1:8000:5001"
     volumes:
       - ./posts:/app/posts
       - ./static:/app/static

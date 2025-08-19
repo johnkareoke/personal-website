@@ -59,10 +59,33 @@ jobs:
           key_path: /home/runner/.ssh/ci_hetzner
           script: |
             set -euo pipefail
-            cd /opt/apps
-            # Pull the latest image
+            # Create personal website directory if it doesn't exist
+            sudo mkdir -p /opt/personal-website
+            sudo chown $USER:$USER /opt/personal-website
+            
+            # Copy production docker-compose file
+            cd /opt/personal-website
+            cat > docker-compose.yml << 'EOF'
+            services:
+              personal-website:
+                image: ghcr.io/johnkareoke/personal-website:latest
+                ports:
+                  - "127.0.0.1:8000:5001"
+                volumes:
+                  - ./posts:/app/posts
+                  - ./static:/app/static
+                environment:
+                  - FLASK_DEBUG=0
+                restart: unless-stopped
+                healthcheck:
+                  test: ["CMD", "curl", "-f", "http://localhost:8000/api/posts"]
+                  interval: 30s
+                  timeout: 10s
+                  retries: 3
+                  start_period: 40s
+            EOF
+            
+            # Pull and start the personal website service
             docker compose pull
-            # Restart all services
             docker compose up -d
-            # Clean up old images
             docker image prune -f
