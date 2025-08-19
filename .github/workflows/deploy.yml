@@ -89,3 +89,8 @@ jobs:
             docker compose pull
             docker compose up -d
             docker image prune -f
+    
+            cd /opt/apps
+            docker compose pull personal-website
+            docker compose up -d personal-website
+            docker image prune -f
