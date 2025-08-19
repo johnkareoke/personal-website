@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Request - John Carolin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="branding">
+        <div id="branding-inner">
+            <div class="container">
+                <div class="header-content">
+                    <h1 id="site-title">
+                        <a href="index.html">Along the way</a>
+                    </h1>
+                    
+                    <nav class="main-navigation">
+                        <ul class="main-menu">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#musings">Musings</a></li>
+                            <li><a href="index.html#galleries">Galleries</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" class="row">
+        <div class="twelve columns">
+            <div class="full-width">
+                <div class="page-content">
+                    <header class="page-header">
+                        <h1 class="page-title">Data Deletion Request</h1>
+                        <p class="page-subtitle">Request removal of your personal data</p>
+                    </header>
+                    
+                    <div class="about-content">
+                        <p>Under data protection laws, you have the right to request deletion of your personal data. Use this form to submit your deletion request.</p>
+                        
+                        <h2>What Data We May Have</h2>
+                        <p>We may have collected the following types of data:</p>
+                        <ul>
+                            <li><strong>Local Storage Data:</strong> Music preferences, Instagram username, and other settings stored in your browser</li>
+                            <li><strong>Contact Information:</strong> If you've previously contacted us</li>
+                            <li><strong>Usage Analytics:</strong> Basic website usage data</li>
+                        </ul>
+
+                        <h2>Deletion Process</h2>
+                        <p>When you submit a deletion request:</p>
+                        <ul>
+                            <li>We will review your request within 30 days</li>
+                            <li>We will delete any personal data we hold about you</li>
+                            <li>We will confirm the deletion in writing</li>
+                            <li>You may need to clear your browser's local storage manually</li>
+                        </ul>
+
+                        <div class="contact-form">
+                            <form id="deletion-form" onsubmit="handleDeletionRequest(event)">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Full Name *</label>
+                                    <input type="text" id="name" name="name" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" id="email" name="email" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="reason" class="form-label">Reason for Deletion (Optional)</label>
+                                    <textarea id="reason" name="reason" class="form-textarea" rows="4" placeholder="Please let us know why you're requesting data deletion..."></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <input type="checkbox" id="confirm" name="confirm" required>
+                                        I confirm that I want to delete my personal data from this website
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="submit-button">Submit Deletion Request</button>
+                            </form>
+                            
+                            <div id="success-message" class="success-message" style="display: none;">
+                                <h3>Request Submitted Successfully</h3>
+                                <p>Thank you for your deletion request. We will process it within 30 days and contact you at the email address provided to confirm the deletion.</p>
+                                <p>In the meantime, you can manually clear your browser's local storage by:</p>
+                                <ol>
+                                    <li>Opening your browser's developer tools (F12)</li>
+                                    <li>Going to the Application/Storage tab</li>
+                                    <li>Finding "Local Storage" for this website</li>
+                                    <li>Clearing all stored data</li>
+                                </ol>
+                            </div>
+                            
+                            <div id="error-message" class="error-message" style="display: none;">
+                                <h3>Error</h3>
+                                <p>There was an error submitting your request. Please try again or contact us directly.</p>
+                            </div>
+                        </div>
+
+                        <h2>Alternative Contact Methods</h2>
+                        <p>If you prefer not to use this form, you can also contact us through the form below with any questions or concerns.</p>
+
+                        <h2>What Happens After Deletion</h2>
+                        <p>After your data is deleted:</p>
+                        <ul>
+                            <li>You will no longer have access to any stored preferences</li>
+                            <li>You may need to re-enter settings if you visit the site again</li>
+                            <li>We will retain a record of the deletion request for legal compliance</li>
+                            <li>We will not be able to recover your data once deleted</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="colophon">
+        <div class="container">
+            <div class="footer-content-centered">
+                <span>© <span id="current-year"></span> John Carolin. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function handleDeletionRequest(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('deletion-form');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+            
+            // Get form data
+            const formData = new FormData(form);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const reason = formData.get('reason');
+            const confirm = formData.get('confirm');
+            
+            // Validate form
+            if (!name || !email || !confirm) {
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+                return;
+            }
+            
+            // Simulate form submission (in a real implementation, this would send to a server)
+            console.log('Deletion request submitted:', { name, email, reason });
+            
+            // Show success message
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+            errorMessage.style.display = 'none';
+            
+            // In a real implementation, you would send this data to your server
+            // fetch('/api/deletion-request', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ name, email, reason })
+            // });
+        }
+    </script>
+</body>
+</html> 

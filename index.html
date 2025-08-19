@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Carolin - Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="branding">
+        <div id="branding-inner">
+            <div class="container">
+                <div class="header-content">
+                    <h1 id="site-title">
+                        <a href="#" onclick="spa.navigateTo('home'); return false;">Along the way</a>
+                    </h1>
+                    
+                    <nav class="main-navigation">
+                        <ul class="main-menu">
+                            <li><a href="#" onclick="masonry.showGrid(); return false;">Home</a></li>
+                            <li><a href="#" onclick="loadAboutPage(); return false;">About</a></li>
+                            <li class="has-dropdown">
+                                <a>Musings</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#all"  data-filter="all">All</a></li>
+                                    <li><a href="#cycling" data-filter="cycling">Cycling touring</a></li>
+                                    <li><a href="#snowboarding"  data-filter="snowboarding">Snowboarding</a></li>
+                                    <li><a href="#photography"  data-filter="photography">Photography</a></li>
+                                    <li><a href="#other" data-filter="other">Other</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a>Galleries</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#" onclick="spa.navigateTo('galleries', 'afrikaburn-2013'); return false;">Afrikaburn 2013</a></li>
+                                    <li><a href="#" onclick="spa.navigateTo('galleries', 'gulmarg-2009'); return false;">Gulmarg 2009</a></li>
+                                    <li><a href="#" onclick="spa.navigateTo('galleries', 'temple-basin'); return false;">Temple Basin</a></li>
+                                    <li><a href="#" onclick="spa.navigateTo('galleries', 'splitboard-diy'); return false;">Splitboard DIY</a></li>
+                                    <li><a href="#" onclick="spa.navigateTo('galleries', 'timelapse-intervalometer'); return false;">Timelapse Intervalometer</a></li>
+                                </ul>
+                            </li>
+                            <li class="music-toggle">
+                                <a href="#" onclick="toggleMusic(); return false;" id="music-toggle-btn" title="Toggle Music">
+                                    <span class="music-icon">♪</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" class="row">
+        <div class="twelve columns">
+            <div class="full-width">
+                <!-- Hero Section -->
+                <section class="hero" id="hero-section">
+                    <div class="container">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <h2>歡迎光臨</h2>
+                                <div class="subheader">
+                                    A repository of a few of my images, videos, musing, experiences and projects.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Filter Categories -->
+                <div id="filter">
+                    <a href="#all" class="filter-link active" data-filter="all">All</a>
+                    <a href="#snowboarding" class="filter-link" data-filter="snowboarding">Snowboarding</a>
+                    <a href="#cycling" class="filter-link" data-filter="cycling">Cycling</a>
+                    <a href="#photography" class="filter-link" data-filter="photography">Photography</a>
+                    <a href="#instagram" class="filter-link" data-filter="instagram">Instagram</a>
+                    <a href="#other" class="filter-link" data-filter="other">Other</a>
+                </div>
+
+                <!-- Masonry Grid -->
+                <div id="masonry-grid" class="masonry-grid">
+                    <!-- Posts will be loaded here dynamically -->
+                </div>
+
+                <!-- Loading Indicator -->
+                <div id="loading-indicator" class="loading-indicator" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <p>Loading posts...</p>
+                </div>
+
+                <!-- Dynamic Content Area -->
+                <div id="dynamic-content" style="display: none;"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="colophon">
+        <div class="container">
+            <div class="footer-content-centered">
+                <span>© <span id="current-year"></span> John Carolin. All Rights Reserved.</span>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a> | 
+                    <a href="tos.html">Terms of Service</a> | 
+                    <a href="deletion.html">Data Deletion</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="spa.js"></script>
+    <script src="masonry.js"></script>
+    <script src="music.js"></script>
+    <script src="instagram.js"></script>
+</body>
+</html> 

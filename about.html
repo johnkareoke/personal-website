@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Along the way</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+        }
+        
+        .about-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #34495e;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 2rem auto;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .interest-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .interest-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .interest-icon {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        
+        .interest-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .interest-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .contact-info {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .contact-info h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div id="page" class="hfeed">
+        <!-- Header -->
+        <header id="branding" role="banner">
+            <div id="branding-inner">
+                <div class="container">
+                    <div class="header-content">
+                        <hgroup>
+                            <h1 id="site-title">
+                                <a href="index.html" title="Along the way" rel="home">
+                                    Along the way
+                                </a>
+                            </h1>
+                        </hgroup>
+
+                        <nav role="navigation" class="nav site-navigation main-navigation">
+                            <div class="menu-toggle">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                            <ul id="menu-main-menu" class="main-menu">
+                                <li><a href="about.html">About</a></li>
+                                <li class="has-dropdown">
+                                    <a href="musings.html">Musings</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="musings.html#cycle-touring">Cycle touring</a></li>
+                                        <li><a href="musings.html#snowboarding">Snowboarding</a></li>
+                                        <li><a href="musings.html#photography">Photography</a></li>
+                                        <li><a href="musings.html#other">Other</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-dropdown">
+                                    <a href="galleries.html">Galleries</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="galleries.html#afrikaburn-2013">Afrikaburn 2013</a></li>
+                                        <li><a href="galleries.html#gulmarg-2009">Gulmarg 2009</a></li>
+                                        <li><a href="galleries.html#temple-basin">Temple Basin</a></li>
+                                        <li><a href="galleries.html#splitboard-diy">Splitboard DIY</a></li>
+                                        <li><a href="galleries.html#timelapse-intervalometer">Timelapse Intervalometer</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-outer">
+            <div id="main" class="row">
+                <div class="twelve columns">
+                    <div id="primary" class="full-width">
+                        <div id="content" role="main">
+                            <div class="container">
+                                <div class="page-content">
+                                    <header class="page-header">
+                                        <h1 class="page-title">About</h1>
+                                        <p class="page-subtitle">A bit about me and what I do</p>
+                                    </header>
+                                    
+                                    <div class="about-content">
+                                        <img src="images/profile.jpg" alt="John Carolin" class="profile-image">
+                                        
+                                        <p>Hello! I'm John Carolin, and this is my personal space on the web where I share my adventures, thoughts, and creative projects. I'm passionate about photography, outdoor activities, and exploring the world around me.</p>
+                                        
+                                        <h2>What I Do</h2>
+                                        <p>I spend my time cycling through beautiful landscapes, snowboarding in the mountains, and capturing moments through photography. When I'm not outdoors, I work on software projects and share my experiences through writing and images.</p>
+                                        
+                                        <h2>My Interests</h2>
+                                        <div class="interests-grid">
+                                            <div class="interest-card">
+                                                <div class="interest-icon">
+                                                    <i class="fas fa-camera"></i>
+                                                </div>
+                                                <h3 class="interest-title">Photography</h3>
+                                                <p class="interest-description">Capturing moments and landscapes through the lens, from urban scenes to natural wonders.</p>
+                                            </div>
+                                            
+                                            <div class="interest-card">
+                                                <div class="interest-icon">
+                                                    <i class="fas fa-bicycle"></i>
+                                                </div>
+                                                <h3 class="interest-title">Cycle Touring</h3>
+                                                <p class="interest-description">Exploring the world on two wheels, discovering new places and meeting interesting people along the way.</p>
+                                            </div>
+                                            
+                                            <div class="interest-card">
+                                                <div class="interest-icon">
+                                                    <i class="fas fa-mountain"></i>
+                                                </div>
+                                                <h3 class="interest-title">Snowboarding</h3>
+                                                <p class="interest-description">Riding the slopes and backcountry, experiencing the thrill of winter sports in beautiful mountain settings.</p>
+                                            </div>
+                                            
+                                            <div class="interest-card">
+                                                <div class="interest-icon">
+                                                    <i class="fas fa-code"></i>
+                                                </div>
+                                                <h3 class="interest-title">Software Development</h3>
+                                                <p class="interest-description">Creating useful tools and applications, including the Panoplugin project for panoramic photography.</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <h2>My Story</h2>
+                                        <p>I've been fortunate to travel to many amazing places and experience different cultures. From the mountains of New Zealand to the coastlines of Europe, each journey has taught me something new and provided inspiration for my photography and writing.</p>
+                                        
+                                        <p>This website serves as a repository of those experiences - a collection of images, stories, and projects that I hope will inspire others to explore and create.</p>
+                                        
+                                        <div class="contact-info">
+                                            <h3>Get in Touch</h3>
+                                            <p>I'm always interested in connecting with fellow travelers, photographers, and outdoor enthusiasts. Feel free to reach out!</p>
+                                            <div class="contact-links">
+                                                <a href="https://twitter.com/johnkareoke" class="contact-link" target="_blank" rel="noopener">
+                                                    <i class="fab fa-twitter"></i>
+                                                    Twitter
+                                                </a>
+                                                <a href="https://instagram.com/johncarolin" class="contact-link" target="_blank" rel="noopener">
+                                                    <i class="fab fa-instagram"></i>
+                                                    Instagram
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="colophon" class="row" role="contentinfo">
+            <div id="site-generator" class="twelve columns">
+                <div class="footer-content">
+                    <div class="footer-content-centered">
+                        <p>&copy; <span id="current-year"></span> John Carolin. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
