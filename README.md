@@ -73,6 +73,10 @@ personal-website/
 ├── deletion.html          # Data deletion form
 ├── Dockerfile             # Docker container definition
 ├── docker-compose.yml     # Docker Compose configuration
+├── docker-compose.prod.yml # Production Docker Compose
+├── Caddyfile              # Caddy web server configuration
+├── .github/workflows/deploy.yml # GitHub Actions workflow
+├── DEPLOYMENT.md          # Deployment guide
 └── README.md              # This file
 ```
 
@@ -150,18 +154,35 @@ docker-compose logs -f
 
 ## Deployment
 
-### Production Docker
+### GitHub Actions (Recommended)
+
+This repository includes a complete CI/CD pipeline that automatically builds and deploys your website to a virtual server.
+
+**Features:**
+- 🚀 **Automatic deployment** on push to `main` branch
+- 🐳 **Docker containerization** with GitHub Container Registry
+- 🔒 **Secure SSH deployment** to your server
+- 🌐 **Caddy reverse proxy** for production serving
+- 📊 **Health checks** and monitoring
+
+**Quick Setup:**
+1. Add repository secrets: `SERVER_SSH_KEY`, `SERVER_HOST`, `SERVER_USER`
+2. Push to `main` branch to trigger deployment
+3. Your site will be available at `archive.johncarolin.com`
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for complete setup instructions.
+
+### Manual Production Docker
 ```bash
 # Build production image
 docker build -t personal-website:prod .
 
 # Run with production environment
-docker run -d -p 80:5001 -e FLASK_ENV=production personal-website:prod
+docker run -d -p 80:5001 -e FLASK_DEBUG=0 personal-website:prod
 ```
 
 ### Environment Variables
-- `FLASK_ENV`: Set to `production` for production deployment
-- `FLASK_DEBUG`: Set to `0` for production
+- `FLASK_DEBUG`: Set to `0` for production deployment
 
 ## License
 

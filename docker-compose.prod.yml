@@ -1,0 +1,17 @@
+services:
+  personal-website:
+    image: ghcr.io/john-dainsured/personal-website:latest
+    ports:
+      - "127.0.0.1:5001:5001"
+    volumes:
+      - ./posts:/app/posts
+      - ./static:/app/static
+    environment:
+      - FLASK_DEBUG=0
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/api/posts"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
