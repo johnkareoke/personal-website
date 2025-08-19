@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   website:
     build: .
@@ -9,6 +7,5 @@ services:
       - ./posts:/app/posts
       - ./static:/app/static
     environment:
-      - FLASK_ENV=development
       - FLASK_DEBUG=1
     restart: unless-stopped

@@ -17,7 +17,7 @@ EXPOSE 5001
 
 # Set environment variables
 ENV FLASK_APP=server.py
-ENV FLASK_ENV=production
+ENV FLASK_DEBUG=0
 
 # Run the application
 CMD ["python", "server.py"]
